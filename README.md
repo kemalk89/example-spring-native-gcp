@@ -31,6 +31,9 @@ to google cloud. Just ignore it, because the application will work fine.
 
 After adding GCP Support everything is still working as expected. (With Spring-Boot-only start time was 970ms. With Spring Native it is 74ms.)
 
+### Adding Secret Manager
+Here you can read how to add Secret Manager https://docs.spring.io/spring-cloud-gcp/docs/current/reference/html/secretmanager.html#_secret_manager.
+
 # Problem
 
 

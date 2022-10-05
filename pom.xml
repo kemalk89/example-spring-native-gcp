@@ -2,22 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.6.12</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.example</groupId>
 	<artifactId>rest-service-complete</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rest-service-complete</name>
 	<description>Demo project for Spring Boot</description>
+
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud-gcp.version>3.3.0</spring-cloud-gcp.version>
 		<spring-cloud.version>2021.0.4</spring-cloud.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -33,12 +37,16 @@
 		<dependency>
 			<groupId>org.springframework.experimental</groupId>
 			<artifactId>spring-native</artifactId>
-			<version>0.12.1</version>
+			<version>0.11.5</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.google.cloud</groupId>
 			<artifactId>spring-cloud-gcp-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-gcp-starter-secretmanager</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -51,7 +59,7 @@
 			<plugin>
 				<groupId>org.springframework.experimental</groupId>
 				<artifactId>spring-aot-maven-plugin</artifactId>
-				<version>0.12.1</version>
+				<version>0.11.5</version>
 				<executions>
 					<execution>
 						<id>generate</id>
@@ -122,7 +130,6 @@
 	</profiles>
 
 	<repositories>
-		<!-- ... -->
 		<repository>
 			<id>spring-release</id>
 			<name>Spring release</name>
@@ -131,7 +138,6 @@
 	</repositories>
 
 	<pluginRepositories>
-		<!-- ... -->
 		<pluginRepository>
 			<id>spring-release</id>
 			<name>Spring release</name>
@@ -141,6 +147,13 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-gcp-dependencies</artifactId>
+				<version>1.2.8.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
